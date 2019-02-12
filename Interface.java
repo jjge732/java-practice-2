@@ -5,24 +5,28 @@ public class Interface {
     private int firstNumber;
     private int secondNumber;
 
-    Scanner sc = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    public String getOperation() {
-        System.out.println("Would you like to add, subtract, mulitply, or divide?");
-        operation = sc.nextLine();
+    public String setOperation() {
+        System.out.println("Would you like to add, subtract, multiply, or divide?");
+        operation = scanner.nextLine();
         return operation;
     }
 
     public int setFirstNumber() {
         System.out.println("What is the first number you would like to " + operation);
-        firstNumber = Integer.parseInt(sc.nextLine());
+        firstNumber = scanner.nextInt();
         return firstNumber;
     }
 
     public int setSecondNumber() {
         System.out.println("What is the second number you would like to " + operation);
-        secondNumber = Integer.parseInt(sc.nextLine());
+        secondNumber = scanner.nextInt();
         return secondNumber;
+    }
+
+    public String getOperation() {
+        return operation;
     }
 
     public int getFirstNumber() {
@@ -35,11 +39,11 @@ public class Interface {
 
     public boolean operationIsCorrect() {
         System.out.printf("Is %s %s %s what you wanted to do?%n", Integer.toString(firstNumber), operation, Integer.toString(secondNumber));
-        System.out.println("Please type yes or no.");
-        String correctAsString = sc.nextLine();
-        if (correctAsString == "yes") {
+        System.out.println("Please type y for yes or n for no.");
+        char correctAsChar = scanner.next().charAt(0);
+        if (correctAsChar == 'y') {
             return true;
-        } else if (correctAsString == "no") {
+        } else if (correctAsChar == 'n') {
             return false;
         } else {
             throw new IllegalArgumentException("Unable to determine response");

@@ -1,33 +1,38 @@
 class Calculator {
     public static void main(String[] args) {
+        int answer = 0;
         Operations operations = new Operations();
         Interface view = new Interface();
+
+        view.setOperation();
+        view.setFirstNumber();
+        view.setSecondNumber();
 
         switch(view.getOperation()) {
             case "add":
                 if (view.operationIsCorrect()) {
-                    operations.add(view.getFirstNumber(), view.getSecondNumber());
+                    answer = operations.add(view.getFirstNumber(), view.getSecondNumber());
                 } else {
                     System.out.println("Okay, let's start over");
                 }
                 break;
             case "subtract":
                 if (view.operationIsCorrect()) {
-                    operations.subtract(view.getFirstNumber(), view.getSecondNumber());
+                    answer = operations.subtract(view.getFirstNumber(), view.getSecondNumber());
                 } else {
                     System.out.println("Okay, let's start over");
                 }
                 break;
-            case "mulitply":
+            case "multiply":
                 if (view.operationIsCorrect()) {
-                    operations.multiply(view.getFirstNumber(), view.getSecondNumber());
+                    answer = operations.multiply(view.getFirstNumber(), view.getSecondNumber());
                 } else {
                     System.out.println("Okay, let's start over");
                 }
                 break;
             case "divide":
                 if (view.operationIsCorrect()) {
-                    operations.divide(view.getFirstNumber(), view.getSecondNumber());
+                    answer = operations.divide(view.getFirstNumber(), view.getSecondNumber());
                 } else {
                     System.out.println("Okay, let's start over");
                 }
@@ -36,5 +41,6 @@ class Calculator {
 
                 break;
         }
+        System.out.println(answer);
     }
 }
