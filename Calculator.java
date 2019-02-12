@@ -9,7 +9,7 @@ class Calculator {
 
         if (view.operationIsCorrect()) {
             try {
-                System.out.printf("The answer is %d!%n",operations.performOperation(view.getOperation(), view.getFirstNumber(), view.getSecondNumber()));
+                System.out.printf("The answer is %d!%n", operations.performOperation(view.getOperation(), view.getFirstNumber(), view.getSecondNumber()));
             } catch (IllegalArgumentException iae){
                 System.out.println(iae.getMessage());
             }

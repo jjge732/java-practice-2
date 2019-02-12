@@ -1,3 +1,5 @@
+import static java.lang.Math.*;
+
 public class Operations {
     private int answer;
 
@@ -17,19 +19,26 @@ public class Operations {
         return numerator / denominator;
     }
 
+    public int firstNumberToThePowerOfSecondNumber(double firstNumber, double secondNumber) {
+        return (int) pow(firstNumber, secondNumber);
+    }
+
     public int performOperation(String operation, int firstNumber, int secondNumber) {
         switch(operation) {
             case "add":
-                answer = add(firstNumber, secondNumber);
+                answer =  add(firstNumber, secondNumber);
                 break;
             case "subtract":
-                answer = subtract(firstNumber, secondNumber);
+                answer =  subtract(firstNumber, secondNumber);
                 break;
             case "multiply":
-                answer = multiply(firstNumber, secondNumber);
+                answer =  multiply(firstNumber, secondNumber);
                 break;
             case "divide":
-                answer = divide(firstNumber, secondNumber);
+                answer =  divide(firstNumber, secondNumber);
+                break;
+            case "pow":
+                answer = firstNumberToThePowerOfSecondNumber(firstNumber, secondNumber);
                 break;
             default:
                 throw new IllegalArgumentException("Operation not recognized. Please Try again");

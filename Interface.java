@@ -8,7 +8,7 @@ public class Interface {
     Scanner scanner = new Scanner(System.in);
 
     public String setOperation() {
-        System.out.println("Would you like to add, subtract, multiply, or divide?");
+        System.out.println("Would you like to add, subtract, multiply, divide, or pow?");
         operation = scanner.nextLine();
         return operation;
     }
